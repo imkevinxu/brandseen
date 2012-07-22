@@ -37,8 +37,8 @@ window.onload = function () {
             var img = document.getElementById('img_logo');
             fg = new Image();
             fg.src = img.src;
-            fg.width = drawingCanvas.width = width;
-            fg.height = drawingCanvas.height = height;
+            fg.width = drawingCanvas.width = img.width;
+            fg.height = drawingCanvas.height = img.height-2;
 
             // create offscreen buffer
             buffer = document.createElement('canvas');
@@ -94,6 +94,7 @@ window.onload = function () {
         next_level++;
         if (next_level <= 10) {
             $("#current_level").html(next_level);
+            $('#layer_img').css("display", "none");
             nextLevel();
         }
 
@@ -103,10 +104,43 @@ window.onload = function () {
         cp.remove();
         cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
         var lvl = parseInt($("#current_level").text());
-        if (lvl == 2) {
-            var next_logo = BRAIN['mcdonalds'];
-            $('#img_logo').src = "/media/images/" + next_logo + ".png";
+        var next_logo = "";
+        var layer = ""
+
+        switch(lvl) {
+            case 2:
+                next_logo = "batman_yellow";
+                layer = "batman_black";
+                break;
+            case 3:
+                next_logo = "yahoo";
+                break;
+            case 4:
+                next_logo = "dropbox_bw";
+                break;
+            case 5:
+                next_logo = "mcdonalds";
+                break;
+            case 6:
+                next_logo = "batman_black";
+                break;
+            default:
+                break;
         }
+
+        $('#img_logo').attr("src", "/media/images/" + next_logo + ".png").attr("alt", next_logo);
+        if (layer != "") {
+            $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "inline");
+        }
+        $img = $('#img_logo');
+        width = $img.width();
+        height = $img.height();
+
+        changeLogoColor(DEFAULT_COLOR);
+        cp.onchange = function (clr) {
+            color = clr.replace(reg, "#$1$2$3");
+            changeLogoColor(color);
+        };
     }
 
     function parseHexColor(c) {
