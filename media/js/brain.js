@@ -1,5 +1,5 @@
 var BRAIN = {
-    cocacola (name of photo) : "#c10d0a",
+    cocacola: "#c10d0a",
     batman_black : 
     batman_yellow : "ffff00"
     mcdonalds : "ffc300"
