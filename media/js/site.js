@@ -64,13 +64,17 @@ window.onload = function () {
     };
 
     changeLogoColor(DEFAULT_COLOR);
+    var logo;
+    var overall_score;
 
     $('#compare').on("click", function(e) {
         e.preventDefault();
         $('#next').css("display", "block");
         $(this).css("display", "none");
 
-        var score = colorDifference(color, BRAIN['cocacola']);
+        logo = $('#img_logo').attr("alt");
+        var score = colorDifference(color, BRAIN[logo]);
+        overall_score += score;
         $("#after_score").css('display', 'block');
         $("#score").countTo({
             "interval": 10,
@@ -90,15 +94,19 @@ window.onload = function () {
         next_level++;
         if (next_level <= 10) {
             $("#current_level").html(next_level);
-            nextLevel()
+            nextLevel();
         }
 
     });
 
     function nextLevel() {
+        cp.remove();
         cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
-
-
+        var lvl = parseInt($("#current_level").text());
+        if (lvl == 2) {
+            var next_logo = BRAIN['mcdonalds'];
+            $('#img_logo').src = "/media/images/" + next_logo + ".png";
+        }
     }
 
     function parseHexColor(c) {
