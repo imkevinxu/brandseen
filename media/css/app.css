@@ -1,7 +1,7 @@
 /* Artfully masterminded by Cathy Lee  */
 
 body {
-    background: #3e2b55;
+    background: #3a3147;
 }
 
 header#header {
@@ -15,6 +15,13 @@ header#header {
 
 #game section#logo {
     height: 200px;
+    padding: 30px 11px 30px 11px;
+    background: #eee;
+    -moz-box-shadow: 15px 15px 15px #333;
+    position: relative;
+
+    background-image: url(/media/images/bg.png);
+
     /*Play with this value*/
 }
 
