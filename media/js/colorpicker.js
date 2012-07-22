@@ -40,10 +40,11 @@
                 size20 = size / 20,
                 size2 = size / 2,
                 padding = 2 * size / 200,
+                width = size + size20 * 2 + padding * 3 + 10,
                 height = size + size20 * 2 + padding * 3,
                 t = this,
                 H = 1, S = 1, B = 1, s = size - (size20 * 4),
-                r = element ? Raphael(element, size, height) : Raphael(x, y, size, height),
+                r = element ? Raphael(element, width, size) : Raphael(x, y, width, size),
                 xy = s / 6 + size20 * 2 + padding,
                 wh = s * 2 / 3 - padding * 2;
             w1 < 1 && (w1 = 1);
@@ -76,12 +77,12 @@
 
             // brightness drawing
             var h = size20 * 2 + 2;
-            t.brect = r.rect(padding + h / fi / 2, size + padding * 2, size - padding * 2 - h / fi, h - padding * 2).attr({
+            t.brect = r.rect(size + padding * 2 + 10, padding + h / fi / 2, h - padding * 2, size - padding * 2 - h / fi).attr({
                 stroke: "#fff",
-                fill: "180-#fff-#000"
+                fill: "270-#fff-#000"
             });
             t.cursorb = r.set();
-            t.cursorb.push(r.rect(size - padding - h / fi, size + padding, ~~(h / fi), h, w3).attr({
+            t.cursorb.push(r.rect(size + padding + 10, size - padding - h / fi, h, ~~(h / fi), w3).attr({
                 stroke: "#000",
                 opacity: .5,
                 "stroke-width": w3
@@ -123,10 +124,10 @@
                 t.hsOnTheMove = false;
             });
             t.btop.drag(function (dx, dy, x, y) {
-                t.docOnMove(dx, dy, x, y);
+                t.docOnMove(dy, dx, y, x);
             }, function (x, y) {
                 t.bOnTheMove = true;
-                t.setB(x - t.x);
+                t.setB(y - t.y);
             }, function () {
                 t.bOnTheMove = false;
             });
@@ -137,7 +138,7 @@
     ColorPicker.prototype.setB = function (x) {
         x < this.minx && (x = this.minx);
         x > this.maxx && (x = this.maxx);
-        this.cursorb.attr({x: x - this.bwidth});
+        this.cursorb.attr({y: x - this.bwidth});
         this.B = (x - this.minx) / (this.maxx - this.minx);
         this.onchange && this.onchange(this.color());
     };
@@ -155,7 +156,7 @@
         this.cursor.attr({cx: x, cy: y});
         this.H = (1 - d / 360) % 1;
         this.S = Math.min((X * X + Y * Y) / R / R, 1);
-        this.brect.attr({fill: "180-hsb(" + [this.H, this.S] + ",1)-#000"});
+        this.brect.attr({fill: "270-hsb(" + [this.H, this.S] + ",1)-#000"});
         this.onchange && this.onchange(this.color());
     };
     ColorPicker.prototype.docOnMove = function (dx, dy, x, y) {
@@ -182,8 +183,8 @@
             this.S = color.s;
             this.B = color.b;
 
-            this.cursorb.attr({x: this.B * (this.maxx - this.minx) + this.minx - this.bwidth});
-            this.brect.attr({fill: "180-hsb(" + [this.H, this.S] + ",1)-#000"});
+            this.cursorb.attr({y: this.B * (this.maxx - this.minx) + this.minx - this.bwidth});
+            this.brect.attr({fill: "270-hsb(" + [this.H, this.S] + ",1)-#000"});
 
             var d = (1 - this.H) * 360,
                 rd = d * pi / 180,
