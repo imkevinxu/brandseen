@@ -1,3 +1,27 @@
+Features
+---------
+(circular on web) color picker - what type of implementation?
+image slides up and disappears after grading
+grade metric visually increases to actual grade
+like, tweet, share your score
+if you want your brand removed from this site, contact (email)
+submit score (name, location)
+high score list
+timer (for whole game)?
+
+Brands
+---------
+coca cola
+dropbox
+apple
+ibm
+batman
+mcdonalds
+google
+shell
+yahoo
+starbucks
+
 History of names
 ----------------
 brandsense
