@@ -65,7 +65,11 @@ window.onload = function () {
 
     changeLogoColor(DEFAULT_COLOR);
 
-    $('#compare').on("click", function() {
+    $('#compare').on("click", function(e) {
+        e.preventDefault();
+        $('#next').css("display", "block");
+        $(this).css("display", "none");
+
         var score = colorDifference(color, BRAIN['cocacola']);
         $("#after_score").css('display', 'block');
         $("#score").countTo({
@@ -73,7 +77,29 @@ window.onload = function () {
             "startNumber": 0,
             "endNumber": score
         });
+
     });
+
+    $('#next').on("click", function(e) {
+        e.preventDefault();
+        $('#compare').css("display", "block");
+        $(this).css("display", "none");
+
+        $("#after_score").css('display', 'none');
+        var next_level = parseInt($("#current_level").text());
+        next_level++;
+        if (next_level <= 10) {
+            $("#current_level").html(next_level);
+            nextLevel()
+        }
+
+    });
+
+    function nextLevel() {
+        cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
+
+
+    }
 
     function parseHexColor(c) {
         var j = {};

@@ -48,8 +48,13 @@ header#header #about {
     margin: 20px 0;
 }
 
-#game section#controls #compare {
+#game section#controls #compare, #game section#controls #next {
     margin-top: 15px;
+    display: block;
+}
+
+#game section#controls #next {
+    display: none;
 }
 
 #game section#controls #after_score {
