@@ -18,3 +18,6 @@ from brandseen_app.forms import *
 
 def index(request):
     return render(request, "index.html", locals())
+
+def highscore(request):
+return render(request, "highscore.html", locals())
