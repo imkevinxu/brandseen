@@ -2,6 +2,7 @@
 
 body {
     background: #323030;
+    font-family: 'Crete Round', serif;
 }
 
 header#header {
@@ -16,6 +17,11 @@ header#header h5 {
 
 header#header #about {
     margin-top: 19px;
+    margin-left: 25px;
+}
+
+#aboutModal {
+    color: #222222;
 }
 
 #main {
@@ -23,7 +29,7 @@ header#header #about {
 }
 
 #game section#logo {
-    height: 400px; /*Play with this value*/
+    height: 300px; /*Play with this value*/
     margin: 20px 0;
     padding: 30px 11px;
     -moz-box-shadow: 15px 15px 15px #333;
@@ -59,8 +65,8 @@ header#header #about {
   left: 0;
   right: 0;
   font-size: 13px;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-  z-index: 2; }
+  z-index: 2;
+}
   footer .tab {
     position: absolute;
     right: 0;
