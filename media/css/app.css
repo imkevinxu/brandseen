@@ -1,8 +1,12 @@
 /* Artfully masterminded by Cathy Lee  */
 
+body {
+    background: #3e2b55;
+}
+
 header#header {
+    padding-top: 20px;
     height: 55px;
-    background-color: red;
 }
 
 #main {
