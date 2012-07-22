@@ -52,8 +52,17 @@ header#header #about {
     margin-top: 15px;
 }
 
-#game section#controls #total_score {
-    visibility: hidden;
+#game section#controls #after_score {
+    display: none;
+    margin-top: 64px;
+}
+
+#game section#controls #after_score h3 {
+    font-size: 60px;
+}
+
+#game section#controls #after_score h3 #score {
+    color: #fff;
 }
 
 #instructions p {

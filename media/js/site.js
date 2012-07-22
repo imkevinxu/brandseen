@@ -67,12 +67,11 @@ window.onload = function () {
 
     $('#compare').on("click", function() {
         var score = colorDifference(color, BRAIN['cocacola']);
-        $("#total_score").fadeIn('fast', function() {
-            $("#score").countTo({
-                "interval": 8,
-                "startNumber": 0,
-                "endNumber": score
-            });
+        $("#after_score").css('display', 'block');
+        $("#score").countTo({
+            "interval": 10,
+            "startNumber": 0,
+            "endNumber": score
         });
     });
 
