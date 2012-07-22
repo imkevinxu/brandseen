@@ -24,7 +24,7 @@ header#header #about {
     color: #222222;
 }
 
-#main {
+#game {
     margin: 50px 0 100px;
 }
 
@@ -47,40 +47,10 @@ header#header #about {
 }
 
 #footer {
+    height: 100px;
     padding: 20px;
-    
-  -webkit-transition: all 500ms ease-out;
-  -moz-transition: all 500ms ease-out;
-  -o-transition: all 500ms ease-out;
-  -ms-transition: all 500ms ease-out;
-  transition: all 500ms ease-out;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -ms-transition-property: -ms-transform;
-  transition-property: transform;
-  background-color: #4c4c56;
-  height: 120px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  font-size: 13px;
-  z-index: 2;
-}
-  footer .tab {
+    background-color: #4c4c56;
     position: absolute;
+    left: 0;
     right: 0;
-    width: 130px;
-    text-align: center;
-    bottom: -40px;
-    line-height: 40px;
-    height: 40px;
-    background: #4c4c56;
-    font-size: 12px;
-    padding: 0 10px;
-    cursor: pointer; }
-    footer .tab span {
-      border: solid #555555 1px;
-      padding: 0 1px;
-      color: white; 
-  }
+}
