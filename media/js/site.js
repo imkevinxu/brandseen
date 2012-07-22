@@ -1,14 +1,14 @@
 window.onload = function () {
     /* COLOR PICKER IMPLEMENTATION */
     var reg = /^#(.)\1(.)\2(.)\3$/;
-    var DEFAULT_COLOR = "gray";
+    var DEFAULT_COLOR = "#808080";
 
     var img;
     var width;
     var height;
     var fg;
     var buffer;
-    var color;
+    var color = DEFAULT_COLOR;
     var drawingCanvas = document.getElementById('tinted_logo');
     var x = drawingCanvas.getContext('2d');
 
@@ -66,8 +66,63 @@ window.onload = function () {
     changeLogoColor(DEFAULT_COLOR);
 
     $('#compare').on("click", function() {
-        console.log(color.toLowerCase());
-        console.log(BRAIN['cocacola'].toLowerCase());
+        var score = colorDifference(color, BRAIN['cocacola']);
+        $("#total_score").fadeIn('fast', function() {
+            $("#score").countTo({
+                "interval": 8,
+                "startNumber": 0,
+                "endNumber": score
+            });
+        });
     });
+
+    function parseHexColor(c) {
+        var j = {};
+
+        if (c.length == 4) {
+            var s = c.replace(/^#([0-9A-Fa-f]{1})([0-9A-Fa-f]{1})([0-9A-Fa-f]{1})$/, function(_, r, g, b) {
+                j.red = parseInt(r, 16);
+                j.green = parseInt(g, 16);
+                j.blue = parseInt(b, 16);
+
+                return "";
+            });
+
+        } else {
+            var s = c.replace(/^#([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})$/, function(_, r, g, b) {
+                j.red = parseInt(r, 16);
+                j.green = parseInt(g, 16);
+                j.blue = parseInt(b, 16);
+
+                return "";
+            });
+        }
+
+        if (s.length == 0) {
+            return j;
+        }
+    };
+
+    function colorDifference(a, b) {
+        var a = parseHexColor(a);
+        var b = parseHexColor(b);
+
+        if(typeof(a) != 'undefined' && typeof(b) != 'undefined') {
+            var result = 0;
+
+            r = Math.abs(a.red - b.red);
+            g = Math.abs(a.green - b.green);
+            b = Math.abs(a.blue - b.blue);
+            result = r+g+b;
+
+            if (result <= 25) {
+                return 100;
+            } else if (result >= 105) {
+                return 0;
+            } else {
+                return Math.round(100-((result-25)^1.07) + Math.sqrt(result*20) - 22.36);
+            }
+        }
+    };
 
 }
