@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+Title: 
+
+Tagline:
+
+
+Brandseen is a web and iOS game that gauges your ability to recognize and reproduce brand colors. Most brands have been around for a while, and it's interesting to see the effect that advertising has on people's memories. This app was built during the 2012 Greylock Hackfest by Kevin Xu, Cathy Lee, and Ari Weinstein. (respective links to personal webpages: imkevinxu.com, cathyslee.com, ariweinstein.com) Feel free to send us feedback!
+
+
+>>>>>>> notes
 Features
 ---------
 (circular on web) color picker - what type of implementation?
