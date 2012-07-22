@@ -17,7 +17,7 @@ apple: d5d5cd
 ibm: 1f70c1
 batman: ffff00
 mcdonalds: ffc300
-google: 0d48fc (g & g) ee2d38 (1st o and e) ffa40b (2nd o) 00a114 (l)
+google: 0d48fc (g + g) ee2d38 (1st o and e) ffa40b (2nd o) 00a114 (l)
 shell: fd0000 (red) ffd900 (yellow)
 yahoo: 7a0099
 starbucks: 006f42

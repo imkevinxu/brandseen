@@ -124,7 +124,7 @@
                 t.hsOnTheMove = false;
             });
             t.btop.drag(function (dx, dy, x, y) {
-                t.docOnMove(dy, dx, y, x);
+                t.docOnMove(dx, dy, x, y);
             }, function (x, y) {
                 t.bOnTheMove = true;
                 t.setB(y - t.y);
@@ -139,7 +139,7 @@
         x < this.minx && (x = this.minx);
         x > this.maxx && (x = this.maxx);
         this.cursorb.attr({y: x - this.bwidth});
-        this.B = (x - this.minx) / (this.maxx - this.minx);
+        this.B = 1 - ((x - this.minx) / (this.maxx - this.minx));
         this.onchange && this.onchange(this.color());
     };
     ColorPicker.prototype.setHS = function (x, y) {
@@ -164,7 +164,7 @@
             this.setHS(x - this.x, y - this.y);
         }
         if (this.bOnTheMove) {
-            this.setB(x - this.x);
+            this.setB(y - this.y);
         }
     };
     ColorPicker.prototype.remove = function () {
@@ -183,7 +183,7 @@
             this.S = color.s;
             this.B = color.b;
 
-            this.cursorb.attr({y: this.B * (this.maxx - this.minx) + this.minx - this.bwidth});
+            this.cursorb.attr({y: (1 - this.B) * (this.maxx - this.minx) - this.minx + this.bwidth});
             this.brect.attr({fill: "270-hsb(" + [this.H, this.S] + ",1)-#000"});
 
             var d = (1 - this.H) * 360,

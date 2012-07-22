@@ -9,6 +9,10 @@ header#header {
     height: 55px;
 }
 
+header#header img#brandseen {
+    width: 300px;
+}
+
 #main {
     margin: 50px 0 100px;
 }
@@ -23,7 +27,7 @@ header#header {
     background-image: url(/media/images/bg.png);
 }
 
-#game section#logo img {
+#game section#logo img#img_logo {
     height:100%;
 }
 
@@ -33,8 +37,4 @@ header#header {
 
 #footer {
     padding: 20px;
-}
-
-img#brandseen {
-    width: 300px;
 }
