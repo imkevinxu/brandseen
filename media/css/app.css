@@ -18,7 +18,7 @@ header#header img#brandseen {
 }
 
 #game section#logo {
-    height: 200px; /*Play with this value*/
+    height: 400px; /*Play with this value*/
     margin: 20px 0;
     padding: 30px 11px;
     -moz-box-shadow: 15px 15px 15px #333;
