@@ -11,7 +11,7 @@ var BRAIN = {
     dropbox_bw : "#32A1EA",
     dropbox : "#5eaeed",
     shell_red : "#fd0000",
-    shell : "#ffd900",
+    shell_yellow : "#ffd900",
     google : " ",
     google_g : "#0d48fc",
     google_1sto : "#ee2d38",
