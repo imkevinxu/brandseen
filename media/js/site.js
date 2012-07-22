@@ -2,22 +2,32 @@ window.onload = function () {
     /* COLOR PICKER IMPLEMENTATION */
     var reg = /^#(.)\1(.)\2(.)\3$/;
     var DEFAULT_COLOR = "gray";
-    
-    // this is where colorpicker created
-    var div = $('#colorpicker');
-    var cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
 
     var img;
     var width;
     var height;
     var fg;
     var buffer;
+    var color;
     var drawingCanvas = document.getElementById('tinted_logo');
     var x = drawingCanvas.getContext('2d');
 
+    var hideImage = function() {
+        $img = $('#img_logo');
+        width = $img.width();
+        height = $img.height();
+        $img.css('position', 'absolute').css('top', '-9999px');
+    };
+
+    hideImage();
+    
+    // this is where colorpicker created
+    var div = $('#colorpicker');
+    var cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
+
     // assigning onchange event handler
     cp.onchange = function (clr) {
-        var color = clr.replace(reg, "#$1$2$3");
+        color = clr.replace(reg, "#$1$2$3");
         changeLogoColor(color);
     };
 
@@ -53,14 +63,11 @@ window.onload = function () {
         }
     };
 
-    var hideImage = function() {
-        $img = $('#img_logo');
-        width = $img.width();
-        height = $img.height();
-        $img.css('position', 'absolute').css('top', '-9999px');
-    };
-
-    hideImage();
     changeLogoColor(DEFAULT_COLOR);
+
+    $('#compare').on("click", function() {
+        console.log(color.toLowerCase());
+        console.log(BRAIN['cocacola'].toLowerCase());
+    });
 
 }

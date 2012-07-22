@@ -25,15 +25,13 @@ header#header #about {
 }
 
 #game {
-    margin: 50px 0 100px;
+    margin: 40px 0 10px;
 }
 
 #game section#logo {
-    height: 300px; /*Play with this value*/
+    height: 250px; /*Play with this value*/
     margin: 20px 0;
-    padding: 30px 11px;
-    -moz-box-shadow: 15px 15px 15px #333;
-
+    padding: 30px 30px;
     background: white;
 }
 
@@ -44,6 +42,11 @@ header#header #about {
 
 #game section#controls {
     margin: 20px 0;
+}
+
+#instructions p {
+    font-size: 18px;
+    margin-bottom: 80px;
 }
 
 #footer {
