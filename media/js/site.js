@@ -140,7 +140,7 @@ window.onload = function () {
                 $("#controls").hide();
                 $("#instructions").hide();
                 overall_score /= 9;
-                $("#game").append("<h1>Congrats! You're average score was "+overall_score+"</h1>")
+                $("#game").append("<h1>Congrats! Your average score was "+Math.round(overall_score)+"</h1>")
                 $("#game").append('<img src="/media/images/cat1.jpeg" class="cat" />')
                         .append('<img src="/media/images/cat2.jpeg" class="cat" />')
                         .append('<img src="/media/images/cat3.jpeg" class="cat" />')
@@ -160,11 +160,12 @@ window.onload = function () {
         width = $img.width();
         height = $img.height();
 
-        changeLogoColor(DEFAULT_COLOR);
         cp.onchange = function (clr) {
             color = clr.replace(reg, "#$1$2$3");
             changeLogoColor(color);
         };
+
+        setTimeout(function() {changeLogoColor(DEFAULT_COLOR);}, 50);
     }
 
     function parseHexColor(c) {

@@ -6,7 +6,7 @@ body {
 }
 
 header#header {
-    padding-top: 5px;
+    padding-top: 25px;
     height: 40px;
 }
 
@@ -37,6 +37,9 @@ header#header #about {
     margin: 20px 0;
     padding: 30px 30px;
     background: url(/media/images/tiny_grid.png);
+    -moz-box-shadow: inset 0 0 10px #6F6E6F;
+    -webkit-box-shadow: inset 0 0 10px #6F6E6F;
+    box-shadow: inset 0 0 10px #6F6E6F;
 }
 
 #game section#logo img#layer_img {
