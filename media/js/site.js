@@ -129,11 +129,11 @@ window.onload = function () {
                 next_logo = "ibm";
                 break;
             case 8:
-                next_logo = "apple";
+                next_logo = "shell_red";
+                layer = "shell_yellow"
                 break;
             case 9:
-                next_logo = "shell_red";
-                layer = "shell"
+                next_logo = "apple";
                 break;
             case 10:
                 $("#logo").hide();
