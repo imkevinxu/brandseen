@@ -1,2 +1,19 @@
 /* Artfully masterminded by Cathy Lee  */
 
+header#header {
+    height: 55px;
+    background-color: red;
+}
+
+#main {
+    margin: 50px 0 100px;
+}
+
+#game section#logo {
+    height: 200px;
+    /*Play with this value*/
+}
+
+#game section#logo img {
+    height:100%;
+}
