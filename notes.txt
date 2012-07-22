@@ -23,15 +23,18 @@ timer (for whole game)?
 Brands and hex codes
 ---------
 coca cola: c10d0a
-dropbox: 5eaeed (blue)
-apple: d5d5cd
-ibm: 1f70c1
 batman: ffff00
 mcdonalds: ffc300
-google: 0d48fc (g + g) ee2d38 (1st o and e) ffa40b (2nd o) 00a114 (l)
-shell: fd0000 (red) ffd900 (yellow)
-yahoo: 7a0099
 starbucks: 006f42
+yahoo: 7a0099
+ibm: 1f70c1
+apple: d5d5cd
+dropbox: 5eaeed (blue)
+shell: fd0000 (red) ffd900 (yellow)
+google: 0d48fc (g + g) ee2d38 (1st o and e) ffa40b (2nd o) 00a114 (l)
+
+
+
 
 History of names
 ----------------
