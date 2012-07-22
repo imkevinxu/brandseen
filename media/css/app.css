@@ -54,3 +54,7 @@ header#header #about {
     left: 0;
     right: 0;
 }
+
+#footer p {
+    margin-bottom: 10px;
+}
