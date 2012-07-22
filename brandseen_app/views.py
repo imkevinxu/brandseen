@@ -20,4 +20,4 @@ def index(request):
     return render(request, "index.html", locals())
 
 def highscore(request):
-return render(request, "highscore.html", locals())
+    return render(request, "highscore.html", locals())

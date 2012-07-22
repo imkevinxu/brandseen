@@ -7,4 +7,6 @@ urlpatterns = patterns('brandseen_app.views',
         name='login'),
     url(r'^logout/$', logout, kwargs=dict(next_page='/'),
         name='logout'),
+
+    url(r'^highscore$', 'highscore', name='highscore'),
 )

@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+<!-- Copy and Paste this for every html file. -->
 {% block title %}{% endblock %}
 {% block meta_description %}{% endblock %}
 
@@ -5,8 +7,16 @@
 
 {% block content %}
 
+<header id="header" class="row">
+    <div class="twelve columns">
+        <img src="/media/images/brandseen.png" id="brandseen">
+        <p>How well do you recognize brands?</p>
+    </div>
+</header>
+
 <div class="row">
     <div class="twelve columns">
+
         <div class="content">
 <h1>HI-SCORES</h1>
 <table width="645" cellspacing="0" cellpadding="0">
@@ -37,9 +47,8 @@
 <tr id="">
 <td class="pos">9.</td><td class="name"> Name</td><td class="score">Score</td><td class="location"> City, State</td><td class="time">00 : 00</td>
 </tr>
-
-<tr class="youwon">
-<td colspan="5"><a href="/">~ home ~</a></td>
+<tr id="">
+<td class="pos">10.</td><td class="name"> Name</td><td class="score">Score</td><td class="location"> City, State</td><td class="time">00 : 00</td>
 </tr>
 </table>
 </div>
