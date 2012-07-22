@@ -75,6 +75,11 @@ header#header #about {
     color: #fff;
 }
 
+#game .cat {
+    width: 300px;
+    display: inline;
+}
+
 #instructions p {
     font-size: 18px;
     margin-bottom: 80px;

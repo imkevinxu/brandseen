@@ -65,7 +65,7 @@ window.onload = function () {
 
     changeLogoColor(DEFAULT_COLOR);
     var logo;
-    var overall_score;
+    var overall_score = 0;
 
     $('#compare').on("click", function(e) {
         e.preventDefault();
@@ -122,7 +122,31 @@ window.onload = function () {
                 next_logo = "mcdonalds";
                 break;
             case 6:
-                next_logo = "batman_black";
+                next_logo = "starbucks_green";
+                layer = "starbucks_white"
+                break;
+            case 7:
+                next_logo = "ibm";
+                break;
+            case 8:
+                next_logo = "apple";
+                break;
+            case 9:
+                next_logo = "shell_red";
+                layer = "shell"
+                break;
+            case 10:
+                $("#logo").hide();
+                $("#controls").hide();
+                $("#instructions").hide();
+                overall_score /= 9;
+                $("#game").append("<h1>Congrats! You're average score was "+overall_score+"</h1>")
+                $("#game").append('<img src="/media/images/cat1.jpeg" class="cat" />')
+                        .append('<img src="/media/images/cat2.jpeg" class="cat" />')
+                        .append('<img src="/media/images/cat3.jpeg" class="cat" />')
+                        .append('<img src="/media/images/cat4.jpeg" class="cat" />')
+                        .append('<img src="/media/images/cat5.jpeg" class="cat" />')
+                        .append('<img src="/media/images/cat6.jpeg" class="cat" />');
                 break;
             default:
                 break;

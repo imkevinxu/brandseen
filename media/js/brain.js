@@ -3,8 +3,8 @@ var BRAIN = {
     batman_black : " ",
     batman_yellow : "#ffff00",
     mcdonalds : "#ffc300",
-    starbucks_white : 
-    starbucks_green : "#006f42"
+    starbucks_white : " ",
+    starbucks_green : "#006f42",
     yahoo: "#7a0099",
     ibm: "#1f70c1",
     apple: "#d5d5cd",
