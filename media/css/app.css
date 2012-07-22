@@ -23,12 +23,12 @@ header#header img#brandseen {
     padding: 30px 11px;
     -moz-box-shadow: 15px 15px 15px #333;
 
-    background: #eee;
-    background-image: url(/media/images/bg.png);
+    background: white;
 }
 
 #game section#logo img#img_logo {
     height:100%;
+    visibility: hidden;
 }
 
 #game section#controls {

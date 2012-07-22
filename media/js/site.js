@@ -6,36 +6,31 @@ window.onload = function () {
     // this is where colorpicker created
     var div = $('#colorpicker');
     var cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
-    
 
-    // assigning onchange event handler
-    cp.onchange = function (clr) {
-        var color = clr.replace(reg, "#$1$2$3");
-        changeLogoColor(color);
-        
-    };
-
-    var x; //drawing context
     var img;
     var width;
     var height;
     var fg;
     var buffer;
     var drawingCanvas = document.getElementById('tinted_logo');
+    var x = drawingCanvas.getContext('2d');
+
+    // assigning onchange event handler
+    cp.onchange = function (clr) {
+        var color = clr.replace(reg, "#$1$2$3");
+        changeLogoColor(color);
+    };
 
     var changeLogoColor = function(color) {
         // Check the element is in the DOM and the browser supports canvas
         if(drawingCanvas && drawingCanvas.getContext) {
-            // Initaliase a 2-dimensional drawing context
-            x = drawingCanvas.getContext('2d');
-
             var img = document.getElementById('img_logo');
             fg = new Image();
             fg.src = img.src;
             fg.width = drawingCanvas.width = width;
             fg.height = drawingCanvas.height = height;
 
-            // create offscreen buffer, 
+            // create offscreen buffer
             buffer = document.createElement('canvas');
             buffer.width = fg.width;
             buffer.height = fg.height;
@@ -51,10 +46,10 @@ window.onload = function () {
             bx.drawImage(fg,0,0,fg.width,fg.height);
 
             // to tint the image, draw it first
-            // x.drawImage(fg,0,0,fg.width,fg.height);
+            x.drawImage(fg,0,0,fg.width,fg.height);
 
             //then set the global alpha to the amound that you want to tint it, and draw the buffer directly on top of it.
-            x.globalAlpha = 1.0;
+            x.globalAlpha = 0.5;
             x.drawImage(buffer,0,0);
         }
     };
