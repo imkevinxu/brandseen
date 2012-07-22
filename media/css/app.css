@@ -5,12 +5,17 @@ body {
 }
 
 header#header {
-    padding-top: 20px;
-    height: 55px;
+    padding-top: 5px;
+    height: 40px;
 }
 
-header#header img#brandseen {
-    width: 250px;
+header#header h5 {
+    margin-top: 38px;
+    margin-bottom: 0;
+}
+
+header#header #about {
+    margin-top: 19px;
 }
 
 #main {

@@ -29,7 +29,6 @@ window.onload = function () {
             fg.src = img.src;
             fg.width = drawingCanvas.width = width;
             fg.height = drawingCanvas.height = height;
-            // console.log(fg.css('opacity'));
 
             // create offscreen buffer
             buffer = document.createElement('canvas');
@@ -43,7 +42,7 @@ window.onload = function () {
             bx.fillRect(0,0,buffer.width,buffer.height);
 
             // destination atop makes a result with an alpha channel identical to fg, but with all pixels retaining their original color *as far as I can tell*
-            bx.globalCompositeOperation = "destination-in";
+            bx.globalCompositeOperation = "destination-atop";
             bx.drawImage(fg,0,0,fg.width,fg.height);
 
             // to tint the image, draw it first

@@ -8,23 +8,31 @@
 {% block content %}
 
 <header id="header" class="row">
-    <div class="twelve columns">
-        <img src="/media/images/brandseen.png" id="brandseen">
-        <p>How well do you recognize brands?</p>
+    <div class="three columns">
+        <a href="/">
+            <img src="/media/images/brandseen.png" id="brandseen">
+        </a>
+    </div>
+    <div class="seven columns">
+        <h5>How well do you recognize brands?</h5>
+    </div>
+
+    <div class="two columns">
+        <a href="#" class="button" id="about" data-reveal-id="aboutModal">About</a>
     </div>
 </header>
 
 <div id="main" class="row">
-    <div class="twelve columns">
+    <div class="twelve columns centered">
         
-        <div id="game" class="ten columns centered">
+        <div id="game">
             <center>
                 <section id="logo">
                     <canvas id="tinted_logo">
                         <p>Your browser doesn't support canvas.</p>
                     </canvas>
 
-                    <img src="/media/images/dropbox.png" alt="Coca Cola" id="img_logo" />
+                    <img src="/media/images/cocacola.png" alt="Coca Cola" id="img_logo" />
                 </section>
             </center>
 
@@ -47,13 +55,13 @@
 </div>
 
 <footer id="footer" class="row">
-    <div class="four columns" id="footer1">
+    <div class="six columns" id="footer1">
     Made by Kevin, Cathy, and Ari at Greylock Hackfest. 
     Check out the <a href="link">iPhone App</a>.<br><br>
     <div class="fb-like" data-href="http://www.brandseen.com" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
 
     </div>
-    <div class="four columns" id="footer2">
+    <div class="six columns" id="footer2">
         footer 2
     </div>
 </footer>
