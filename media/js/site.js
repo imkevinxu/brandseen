@@ -1,7 +1,7 @@
 window.onload = function () {
     /* COLOR PICKER IMPLEMENTATION */
     var reg = /^#(.)\1(.)\2(.)\3$/;
-    var DEFAULT_COLOR = "#eeeeee";
+    var DEFAULT_COLOR = "gray";
     
     // this is where colorpicker created
     var div = $('#colorpicker');
@@ -12,6 +12,7 @@ window.onload = function () {
     cp.onchange = function (clr) {
         var color = clr.replace(reg, "#$1$2$3");
         changeLogoColor(color);
+        
     };
 
     var x; //drawing context
@@ -27,14 +28,12 @@ window.onload = function () {
         if(drawingCanvas && drawingCanvas.getContext) {
             // Initaliase a 2-dimensional drawing context
             x = drawingCanvas.getContext('2d');
-            width = x.canvas.width;
-            height = x.canvas.height;
 
             var img = document.getElementById('img_logo');
             fg = new Image();
             fg.src = img.src;
-            fg.width = drawingCanvas.width = img.width;
-            fg.height = drawingCanvas.height = img.height;
+            fg.width = drawingCanvas.width = width;
+            fg.height = drawingCanvas.height = height;
 
             // create offscreen buffer, 
             buffer = document.createElement('canvas');
@@ -52,13 +51,22 @@ window.onload = function () {
             bx.drawImage(fg,0,0,fg.width,fg.height);
 
             // to tint the image, draw it first
-            x.drawImage(fg,0,0,fg.width,fg.height);
+            // x.drawImage(fg,0,0,fg.width,fg.height);
 
             //then set the global alpha to the amound that you want to tint it, and draw the buffer directly on top of it.
-            x.globalAlpha = 0.5;
+            x.globalAlpha = 1.0;
             x.drawImage(buffer,0,0);
         }
-    }
+    };
 
+    var hideImage = function() {
+        $img = $('#img_logo');
+        width = $img.width();
+        height = $img.height();
+        $img.css('position', 'absolute').css('top', '-9999px');
+    };
+
+    hideImage();
     changeLogoColor(DEFAULT_COLOR);
+
 }
