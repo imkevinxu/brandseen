@@ -64,7 +64,8 @@
         var reg = /^#(.)\1(.)\2(.)\3$/;
         
         // this is where colorpicker created
-        var cp = Raphael.colorpicker(0, 0, 300, "#eee", document.getElementById('colorpicker'));
+        var div = $('#colorpicker');
+        var cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, "#eee", document.getElementById('colorpicker'));
         
         // assigning onchange event handler
         cp.onchange = function (clr) {

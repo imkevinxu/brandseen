@@ -14,17 +14,19 @@ header#header {
 }
 
 #game section#logo {
-    height: 200px;
-    padding: 30px 11px 30px 11px;
-    background: #eee;
+    height: 200px; /*Play with this value*/
+    margin: 20px 0;
+    padding: 30px 11px;
     -moz-box-shadow: 15px 15px 15px #333;
-    position: relative;
 
+    background: #eee;
     background-image: url(/media/images/bg.png);
-
-    /*Play with this value*/
 }
 
 #game section#logo img {
     height:100%;
+}
+
+#game section#controls {
+    margin: 20px 0;
 }
