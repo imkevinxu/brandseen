@@ -184,12 +184,11 @@ window.onload = function () {
             changeLogoColor(color);
         };
 
+        $("#logo").slideToggle(800).delay(200);
+
         window.setTimeout( function() {
             changeLogoColor(DEFAULT_COLOR);
         }, 100);
-
-        $("#logo").slideToggle(800).delay(200);
-
     }
 
     String.prototype.capitalize = function() {
