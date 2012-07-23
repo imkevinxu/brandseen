@@ -69,33 +69,40 @@ window.onload = function () {
 
     $('#compare').on("click", function(e) {
         e.preventDefault();
-        $('#next').css("display", "block");
-        $(this).css("display", "none");
+        if (!$(this).attr("disabled")) {
+            $('#next').css("display", "block").attr("disabled", true);
+            $(this).css("display", "none");
 
-        logo = $('#img_logo').attr("alt");
-        var score = colorDifference(color, BRAIN[logo]);
-        overall_score += score;
-        $("#after_score").css('display', 'block');
-        $("#score").countTo({
-            "interval": 10,
-            "startNumber": 0,
-            "endNumber": score
-        });
+            logo = $('#img_logo').attr("alt");
+            var score = colorDifference(color, BRAIN[logo]);
+            overall_score += score;
+            $("#after_score").css('display', 'block');
+            $("#score").countTo({
+                "interval": 10,
+                "startNumber": 0,
+                "endNumber": score,
+                "onFinish": function() {
+                    $('#next').attr("disabled", false);
+                }
+            });
+        }
 
     });
 
     $('#next').on("click", function(e) {
         e.preventDefault();
-        $('#compare').css("display", "block");
-        $(this).css("display", "none");
+        if (!$(this).attr("disabled")) {
+            $('#compare').css("display", "block");
+            $(this).css("display", "none");
 
-        $("#after_score").css('display', 'none');
-        var next_level = parseInt($("#current_level").text());
-        next_level++;
-        if (next_level <= 10) {
-            $("#current_level").html(next_level);
-            $('#layer_img').css("display", "none");
-            nextLevel();
+            $("#after_score").css('display', 'none');
+            var next_level = parseInt($("#current_level").text());
+            next_level++;
+            if (next_level <= 10) {
+                $("#current_level").html(next_level);
+                $('#layer_img').css("display", "none");
+                nextLevel();
+            }
         }
 
     });
@@ -209,10 +216,11 @@ window.onload = function () {
 
             if (result <= 25) {
                 return 100;
-            } else if (result >= 105) {
+            } else if (result >= 113) {
                 return 0;
             } else {
-                return Math.round(100-((result-25)^1.07) + Math.sqrt(result*20) - 22.36);
+                console.log(result);
+                return Math.round(100-(1/50)*(Math.pow(result-25, 1.9)));
             }
         }
     };
