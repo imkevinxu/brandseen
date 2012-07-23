@@ -186,7 +186,7 @@ window.onload = function () {
 
         window.setTimeout( function() {
             changeLogoColor(DEFAULT_COLOR);
-        }, 10);
+        }, 100);
 
         $("#logo").slideToggle(800).delay(200);
 
