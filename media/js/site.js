@@ -114,6 +114,7 @@ window.onload = function () {
                 $('#layer_img').css("display", "none").attr("src", "");
                 $("#real_img").css("display", "none").attr("src", "");
                 nextLevel();
+
             }
         }
 
@@ -124,7 +125,9 @@ window.onload = function () {
         cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
         var lvl = parseInt($("#current_level").text());
         var next_logo = "";
-        var layer = ""
+        var layer = "";
+
+        $("#logo").slideToggle(600);
 
         switch(lvl) {
             case 2:
@@ -175,16 +178,15 @@ window.onload = function () {
         if (layer != "") {
             $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "inline");
         }
-        $img = $('#img_logo');
-        width = $img.width();
-        height = $img.height();
 
         cp.onchange = function (clr) {
             color = clr.replace(reg, "#$1$2$3");
             changeLogoColor(color);
         };
 
-        setTimeout(function() {changeLogoColor(DEFAULT_COLOR);}, 50);
+        changeLogoColor(DEFAULT_COLOR);
+        $("#logo").slideToggle(800).delay(200);
+        changeLogoColor(DEFAULT_COLOR);
     }
 
     String.prototype.capitalize = function() {
@@ -233,20 +235,24 @@ window.onload = function () {
         if(typeof(a) != 'undefined' && typeof(b) != 'undefined') {
             var result = 0;
 
-            r = Math.abs(a.red - b.red);
-            g = Math.abs(a.green - b.green);
-            b = Math.abs(a.blue - b.blue);
-            result = r+g+b;
-            console.log(result);
+            r = a.red - b.red;
+            g = a.green - b.green;
+            b = a.blue - b.blue;
+            result = Math.abs(r+g+b);
 
-            if (result <= 25) {
+            if (result <= 20) {
                 return 100;
-            } else if (result >= 113) {
+            } else if (result >= 150) {
                 return 0;
             } else {
-                console.log(result);
-                console.log(Math.round(100-(1/50)*(Math.pow(result-25, 1.9))));
-                return Math.round(100-(1/50)*(Math.pow(result-25, 1.9)));
+                // New Algorithm
+                // return Math.round(100-(1/4)*(Math.pow(result-20, 1.3)));
+
+                // Test Algorithm
+                return Math.round(100-(1/15)*(Math.pow(result-20, 1.5)));
+
+                // Old Algorithm
+                // return Math.round(100-((result-20)^1.07) + Math.sqrt(result*20) - 22.36);
             }
         }
     };
