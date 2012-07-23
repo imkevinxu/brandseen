@@ -23,3 +23,4 @@ safari
 twitter account
 facebook like/send but
 tweet combined scores
+mobile

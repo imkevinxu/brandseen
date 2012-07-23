@@ -162,10 +162,10 @@ window.onload = function () {
                 $("#controls").hide();
                 $("#instructions").hide();
                 var average_score = averageScore(all_scores);
-                $("#game").append("<h1>Congrats! Your average score was "+average_score+"</h1>");
-                $("#game").append('<a href="https://twitter.com/intent/tweet?text=I got '+average_score+' overall on Brandseen, the logo coloring game http://brandseenapp.com/ &via=brandseen"><h3>Share your score!</h3></a>');
+                $("#game").append("<center><h1 id='congrats'>Congrats! Your average score was "+average_score+"</h1></center>");
+                $("#game").append('<center><a href="https://twitter.com/intent/tweet?text=I got '+average_score+'% overall on Brandseen, the logo coloring game http://brandseenapp.com/ &via=brandseen"><h3>Share your score!</h3></a></center>');
                 $("#game").append("<center><table><tr><td>Coca Cola</td><td>"+all_scores[0]+"</td><td>Batman</td><td>"+all_scores[1]+"</td></tr><tr><td>Yahoo</td><td>"+all_scores[2]+"</td><td>Dropbox</td><td>"+all_scores[3]+"</td></tr><tr><td>McDonalds</td><td>"+all_scores[4]+"</td><td>Starbucks</td><td>"+all_scores[5]+"</td></tr><tr><td>IBM</td><td>"+all_scores[6]+"</td><td>Shell</td><td>"+all_scores[7]+"</td></tr><tr><td>Apple</td><td>"+all_scores[8]+"</td></tr></table></center>");
-                $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" /></center>');
+                $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" style="vertical-align: top;"/></center>');
                 
                 $.get("/success", { "score": average_score } );
                 break;
@@ -245,16 +245,16 @@ window.onload = function () {
             b = a.blue - b.blue;
             result = Math.abs(r+g+b);
 
-            if (result <= 20) {
+            if (result <= 15) {
                 return 100;
-            } else if (result >= 150) {
+            } else if (result >= 126) {
                 return 0;
             } else {
                 // New Algorithm
                 // return Math.round(100-(1/4)*(Math.pow(result-20, 1.3)));
 
                 // Test Algorithm
-                return Math.round(100-(1/15)*(Math.pow(result-20, 1.5)));
+                return Math.round(100-(1/15)*(Math.pow(result-15, 1.55)));
 
                 // Old Algorithm
                 // return Math.round(100-((result-20)^1.07) + Math.sqrt(result*20) - 22.36);

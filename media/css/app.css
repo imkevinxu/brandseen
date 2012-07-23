@@ -141,6 +141,11 @@ header#header #about {
     top: 4px;
 }
 
+#congrats {
+    margin-top: 40px;
+    color: white;
+}
+
 /* CATHY's SPECIAL TAPE ------------------ */
 #game span#tape {
     display: block;
