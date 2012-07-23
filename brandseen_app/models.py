@@ -14,3 +14,6 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
+
+class Record(Base):
+    score = models.IntegerField(blank=True, null=True)

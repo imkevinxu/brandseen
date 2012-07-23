@@ -157,17 +157,15 @@ window.onload = function () {
                 next_logo = "apple";
                 break;
             case 10:
+                $("#tape").hide();
                 $("#logo").hide();
                 $("#controls").hide();
                 $("#instructions").hide();
                 var average_score = averageScore(all_scores);
-                $("#game").append("<h1>Congrats! Your average score was "+average_score+"</h1>")
-                $("#game").append('<img src="/media/images/cat1.jpeg" class="cat" />')
-                        .append('<img src="/media/images/cat2.jpeg" class="cat" />')
-                        .append('<img src="/media/images/cat3.jpeg" class="cat" />')
-                        .append('<img src="/media/images/cat4.jpeg" class="cat" />')
-                        .append('<img src="/media/images/cat5.jpeg" class="cat" />')
-                        .append('<img src="/media/images/cat6.jpeg" class="cat" />');
+                $("#game").append("<h1>Congrats! Your average score was "+average_score+"</h1>");
+                $("#game").append('<a href="https://twitter.com/intent/tweet?text=I got '+average_score+' overall on Brandseen, the logo coloring game&via=brandseen"><h3>Share your score!</h3></a>');
+                $("#game").append("<center><table><tr><td>Coca Cola</td><td>"+all_scores[0]+"</td><td>Batman</td><td>"+all_scores[1]+"</td></tr><tr><td>Yahoo</td><td>"+all_scores[2]+"</td><td>Dropbox</td><td>"+all_scores[3]+"</td></tr><tr><td>McDonalds</td><td>"+all_scores[4]+"</td><td>Starbucks</td><td>"+all_scores[5]+"</td></tr><tr><td>IBM</td><td>"+all_scores[6]+"</td><td>Shell</td><td>"+all_scores[7]+"</td></tr><tr><td>Apple</td><td>"+all_scores[8]+"</td></tr></table></center>");
+                $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" /></center>');
                 break;
             default:
                 break;
@@ -176,7 +174,7 @@ window.onload = function () {
         if (lvl < 10) {
             $('#img_logo').attr("src", "/media/images/" + next_logo + ".png").attr("alt", next_logo);
             if (layer != "") {
-                $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "inline");
+                $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "none");
             }
 
             cp.onchange = function (clr) {
@@ -186,6 +184,7 @@ window.onload = function () {
 
             window.setTimeout( function() {
                 changeLogoColor(DEFAULT_COLOR);
+                $('#layer_img').css("display", "inline");
             }, 800);
 
             $("#logo").slideToggle(800).delay(200);
