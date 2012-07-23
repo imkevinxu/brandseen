@@ -61,7 +61,7 @@ header#header #about {
 
 #game h3#level {
     position: absolute;
-    right: -18px;
+    right: 5px;
     bottom: -23px;
     color: #333;
 }
@@ -144,17 +144,11 @@ header#header #about {
 /* CATHY's SPECIAL TAPE ------------------ */
 
 #game section#logo {
-
-  -webkit-box-shadow: #DDD 0px 1px 2px;
   position: relative;
   border-color: #DEE184;
   text-align: center;
   margin: 2.5em 0px;
   padding: 1.5em 1em;
-  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
-
 }
 
 #game section#logo:after {
@@ -166,7 +160,7 @@ header#header #about {
   top: -21px;
   left: 40%;    
   border: 1px solid #fff;
-  background: rgba(197, 192, 152, .5);
+  background: rgba(197, 192, 152, .8);
   -webkit-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 0 3px rgba(0,0,0,0.1);
   box-shadow: 0px 0 3px rgba(0,0,0,0.1);  
