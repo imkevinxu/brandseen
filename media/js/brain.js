@@ -8,7 +8,7 @@ var BRAIN = {
     yahoo: "#7a0099",
     ibm: "#1f70c1",
     apple: "#000000",
-    dropbox_bw : "#32A1EA",
+    dropbox_bw : "#5EAEED",
     dropbox : "#5eaeed",
     shell_red : "#fd0000",
     shell_yellow : "#ffd900",
