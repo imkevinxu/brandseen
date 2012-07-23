@@ -21,7 +21,9 @@ def index(request):
     return render(request, "index.html", locals())
 
 def success(request):
-    
+    if "score" in request.GET:
+        score = Record.objects.create(score=request.GET["score"])
+        score.save()
 
 def highscore(request):
     return render(request, "highscore.html", locals())
