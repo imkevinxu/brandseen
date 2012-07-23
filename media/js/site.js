@@ -129,7 +129,7 @@ window.onload = function () {
         $("#logo").slideToggle(600);
 
         switch(lvl) {
-            case 10:
+            case 2:
                 next_logo = "batman_yellow";
                 layer = "batman_black";
                 break;
@@ -156,7 +156,7 @@ window.onload = function () {
             case 9:
                 next_logo = "apple";
                 break;
-            case 2:
+            case 10:
                 $("#tape").hide();
                 $("#logo").hide();
                 $("#controls").hide();
