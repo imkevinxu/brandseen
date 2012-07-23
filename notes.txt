@@ -19,3 +19,7 @@ backend:
 LIKE, TWEET, EMAIL, HN, REDDIT
 cross-browser checking
 safari
+
+twitter account
+facebook like/send but
+tweet combined scores
