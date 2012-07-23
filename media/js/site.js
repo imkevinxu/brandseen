@@ -65,7 +65,7 @@ window.onload = function () {
 
     changeLogoColor(DEFAULT_COLOR);
     var logo;
-    var overall_score = 0;
+    var all_scores = [];
 
     $('#compare').on("click", function(e) {
         e.preventDefault();
@@ -75,7 +75,7 @@ window.onload = function () {
 
             logo = $('#img_logo').attr("alt");
             var score = colorDifference(color, BRAIN[logo]);
-            overall_score += score;
+            all_scores.push(score);
             $("#after_score").css('display', 'block');
             $("#score").countTo({
                 "interval": 10,
@@ -146,8 +146,8 @@ window.onload = function () {
                 $("#logo").hide();
                 $("#controls").hide();
                 $("#instructions").hide();
-                overall_score /= 9;
-                $("#game").append("<h1>Congrats! Your average score was "+Math.round(overall_score)+"</h1>")
+                var average_score = averageScore(all_scores);
+                $("#game").append("<h1>Congrats! Your average score was "+average_score+"</h1>")
                 $("#game").append('<img src="/media/images/cat1.jpeg" class="cat" />')
                         .append('<img src="/media/images/cat2.jpeg" class="cat" />')
                         .append('<img src="/media/images/cat3.jpeg" class="cat" />')
@@ -173,6 +173,14 @@ window.onload = function () {
         };
 
         setTimeout(function() {changeLogoColor(DEFAULT_COLOR);}, 50);
+    }
+
+    function averageScore(array) {
+        var total_score = 0;
+        for (var i = 0; i < array.length; i++) {
+            total_score += array[i];
+        }
+        return Math.round(total_score / array.length);
     }
 
     function parseHexColor(c) {
@@ -219,7 +227,6 @@ window.onload = function () {
             } else if (result >= 113) {
                 return 0;
             } else {
-                console.log(result);
                 return Math.round(100-(1/50)*(Math.pow(result-25, 1.9)));
             }
         }

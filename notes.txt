@@ -1,7 +1,6 @@
 Features
 ---------
 image slides up and disappears after grading
-adjust actual grade, more lenient
 like, tweet, share your score
 submit score (name, location)
 high score list
@@ -11,6 +10,8 @@ add company name
 show real company logo
 show all scores and tally thing at end
 arrow showing starting point
+relook at brain and make sure colors are somewhat reasonable
+relook through all images and cleanup
 
 backend:
 - scores
