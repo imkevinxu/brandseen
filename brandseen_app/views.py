@@ -20,5 +20,8 @@ def index(request):
     image = "cocacola"
     return render(request, "index.html", locals())
 
+def success(request):
+    
+
 def highscore(request):
     return render(request, "highscore.html", locals())
