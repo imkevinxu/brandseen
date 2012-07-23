@@ -235,8 +235,6 @@ window.onload = function () {
     };
 
     function colorDifference(a, b) {
-            console.log(a);
-            console.log(b);
         var a = parseHexColor(a);
         var b = parseHexColor(b);
 
@@ -247,10 +245,6 @@ window.onload = function () {
             g = a.green - b.green;
             b = a.blue - b.blue;
             result = Math.sqrt(Math.pow(r, 2)+Math.pow(g, 2)+Math.pow(b, 2));
-            console.log(r);
-            console.log(g);
-            console.log(b);
-            console.log(result);
 
             if (result <= 15) {
                 return 100;
