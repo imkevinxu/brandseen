@@ -17,3 +17,5 @@ backend:
 
 
 LIKE, TWEET, EMAIL, HN, REDDIT
+cross-browser checking
+safari

@@ -33,7 +33,8 @@ DATABASES = {
 # system time zone.
 ### Set to None so that Django will use the same timezone as the os. This is
 ### specific to Unix based-systems. Read above ^
-TIME_ZONE = None
+TIME_ZONE = 'America/Los_Angeles'
+USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
