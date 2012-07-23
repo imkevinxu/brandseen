@@ -17,6 +17,7 @@ from brandseen_app.model_forms import *
 from brandseen_app.forms import *
 
 def index(request):
+    image = "cocacola"
     return render(request, "index.html", locals())
 
 def highscore(request):

@@ -1,7 +1,7 @@
 /* Artfully masterminded by Cathy Lee  */
 
 body {
-    background: #323030;
+    background: url("/media/images/dark_wood.png");
     font-family: 'Crete Round', serif;
 }
 
@@ -31,19 +31,22 @@ header#header #about {
 }
 
 /* Main game elements ------------------ */
+/* ------------------------------------- */
 
 #game {
     margin: 30px 0 10px;
 }
+
+/* Logo elements ------------------ */
 
 #game section#logo {
     height: 250px; /*Play with this value*/
     margin: 20px 0;
     padding: 30px 30px;
     background: url(/media/images/tiny_grid.png);
-    -moz-box-shadow: inset 0 0 10px #6F6E6F;
-    -webkit-box-shadow: inset 0 0 10px #6F6E6F;
-    box-shadow: inset 0 0 10px #6F6E6F;
+    -moz-box-shadow: inset 0 0 5px #6F6E6F;
+    -webkit-box-shadow: inset 0 0 5px #6F6E6F;
+    box-shadow: inset 0 0 5px #6F6E6F;
 }
 
 #game section#logo img#layer_img {
@@ -55,6 +58,8 @@ header#header #about {
     height:200px;
     visibility: hidden;
 }
+
+/* Controller elements ------------------ */
 
 #game section#controls {
     margin: 20px 0;
@@ -86,6 +91,8 @@ header#header #about {
     width: 300px;
     display: inline;
 }
+
+/* Instruction elements  ------------------ */
 
 #instructions h6 {
     font-size: 18px;

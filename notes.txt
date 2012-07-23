@@ -10,6 +10,7 @@ better white 'wrapper'
 add company name
 show real company logo
 show all scores and tally thing at end
+arrow showing starting point
 
 backend:
 - scores
