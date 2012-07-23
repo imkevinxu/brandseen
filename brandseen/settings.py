@@ -168,17 +168,61 @@ LOGGING = {
 ####
 # import local settings overriding the defaults
 ####
-try:
-    from settings_local import *
-except ImportError:
+if not os.environ.get('PRODUCTION', False):
     try:
-        from mod_python import apache
-        apache.log_error( "local settings not available", apache.APLOG_NOTICE )
+        from settings_local import *
     except ImportError:
-        import sys
-        sys.stderr.write( "local settings not available\n" )
-else:
-    try:
-        INSTALLED_APPS += LOCAL_INSTALLED_APPS
-    except NameError:
-        pass
+        try:
+            from mod_python import apache
+            apache.log_error( "local settings not available", apache.APLOG_NOTICE )
+        except ImportError:
+            import sys
+            sys.stderr.write( "local settings not available\n" )
+    else:
+        try:
+            INSTALLED_APPS += LOCAL_INSTALLED_APPS
+        except NameError:
+            pass
+
+
+# Heroku is supposed to inject this code.... for some reason it doesn't
+# TODO: Look into why Heroku isn't
+# http://stackoverflow.com/questions/10596893/deploying-django-to-heroku-psycopg2-error
+import sys
+import urlparse
+import os
+
+
+# Register database schemes in URLs.
+urlparse.uses_netloc.append('postgres')
+urlparse.uses_netloc.append('mysql')
+
+try:
+
+    # Check to make sure DATABASES is set in settings.py file.
+    # If not default to {}
+
+    if 'DATABASES' not in locals():
+        DATABASES = {}
+
+    if 'DATABASE_URL' in os.environ:
+        url = urlparse.urlparse(os.environ['DATABASE_URL'])
+
+        # Ensure default database exists.
+        DATABASES['default'] = DATABASES.get('default', {})
+
+        # Update with environment configuration.
+        DATABASES['default'].update({
+            'NAME': url.path[1:],
+            'USER': url.username,
+            'PASSWORD': url.password,
+            'HOST': url.hostname,
+            'PORT': url.port,
+        })
+        if url.scheme == 'postgres':
+            DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+
+        if url.scheme == 'mysql':
+            DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
+except Exception:
+    print 'Unexpected error:', sys.exc_info()
