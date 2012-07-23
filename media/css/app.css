@@ -49,7 +49,7 @@ header#header #about {
     box-shadow: inset 0 0 5px #6F6E6F;
 }
 
-#game section#logo img#layer_img {
+#game section#logo img#layer_img, #game section#logo img#real_img {
     height:200px;
     position: absolute;
 }

@@ -85,6 +85,15 @@ window.onload = function () {
                     $('#next').attr("disabled", false);
                 }
             });
+
+            if (logo.indexOf("_") != -1) {
+                $("#real_img").attr("src", "/media/images/" + logo.split("_")[0] + ".png")
+                            .fadeIn(800);
+
+            } else {
+                $("#real_img").attr("src", "/media/images/" + logo + ".png")
+                            .fadeIn(800);
+            }
         }
 
     });
@@ -100,7 +109,8 @@ window.onload = function () {
             next_level++;
             if (next_level <= 10) {
                 $("#current_level").html(next_level);
-                $('#layer_img').css("display", "none");
+                $('#layer_img').css("display", "none").attr("src", "");
+                $("#real_img").css("display", "none").attr("src", "");
                 nextLevel();
             }
         }

@@ -7,11 +7,11 @@ high score list
 Top bar comes down
 better white 'wrapper'
 add company name
-show real company logo
 show all scores and tally thing at end
 arrow showing starting point
 relook at brain and make sure colors are somewhat reasonable
 relook through all images and cleanup
+add twitter buttons
 
 backend:
 - scores
