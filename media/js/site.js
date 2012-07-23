@@ -89,10 +89,12 @@ window.onload = function () {
             if (logo.indexOf("_") != -1) {
                 $("#real_img").attr("src", "/media/images/" + logo.split("_")[0] + ".png")
                             .fadeIn(800);
+                $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo.split("_")[0].capitalize()+"\" logo&via=brandseen");
 
             } else {
                 $("#real_img").attr("src", "/media/images/" + logo + ".png")
                             .fadeIn(800);
+                $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo.capitalize()+"\" logo&via=brandseen");
             }
         }
 
@@ -183,6 +185,10 @@ window.onload = function () {
         };
 
         setTimeout(function() {changeLogoColor(DEFAULT_COLOR);}, 50);
+    }
+
+    String.prototype.capitalize = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
     }
 
     function averageScore(array) {

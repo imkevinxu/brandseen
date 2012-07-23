@@ -27,7 +27,7 @@ header#header #about {
 }
 
 #aboutModal {
-    color: #222222;
+    color: #333;
 }
 
 /* Main game elements ------------------ */
@@ -59,6 +59,13 @@ header#header #about {
     visibility: hidden;
 }
 
+#game h3#level {
+    position: absolute;
+    right: -18px;
+    bottom: -23px;
+    color: #333;
+}
+
 /* Controller elements ------------------ */
 
 #game section#controls {
@@ -76,11 +83,13 @@ header#header #about {
 
 #game section#controls #after_score {
     display: none;
-    margin-top: 64px;
+    margin-top: 17px;
 }
 
 #game section#controls #after_score h3 {
+    border: 1px solid white;
     font-size: 58px;
+    padding: 18px 10px;
 }
 
 #game section#controls #after_score h3 #score {
