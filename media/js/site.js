@@ -34,11 +34,10 @@ window.onload = function () {
     var changeLogoColor = function(color) {
         // Check the element is in the DOM and the browser supports canvas
         if(drawingCanvas && drawingCanvas.getContext) {
-            var img = document.getElementById('img_logo');
-            fg = new Image();
-            fg.src = img.src;
-            fg.width = drawingCanvas.width = img.width;
-            fg.height = drawingCanvas.height = img.height-2;
+
+            fg = $('#img_logo')[0];
+            drawingCanvas.width = fg.width;
+            drawingCanvas.height = fg.height;
 
             // create offscreen buffer
             buffer = document.createElement('canvas');
@@ -174,21 +173,24 @@ window.onload = function () {
                 break;
         }
 
-        $('#img_logo').attr("src", "/media/images/" + next_logo + ".png").attr("alt", next_logo);
-        if (layer != "") {
-            $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "inline");
+        if (lvl < 10) {
+            $('#img_logo').attr("src", "/media/images/" + next_logo + ".png").attr("alt", next_logo);
+            if (layer != "") {
+                $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "inline");
+            }
+
+            cp.onchange = function (clr) {
+                color = clr.replace(reg, "#$1$2$3");
+                changeLogoColor(color);
+            };
+
+            window.setTimeout( function() {
+                changeLogoColor(DEFAULT_COLOR);
+            }, 800);
+
+            $("#logo").slideToggle(800).delay(200);
         }
 
-        cp.onchange = function (clr) {
-            color = clr.replace(reg, "#$1$2$3");
-            changeLogoColor(color);
-        };
-
-        $("#logo").slideToggle(800).delay(200);
-
-        window.setTimeout( function() {
-            changeLogoColor(DEFAULT_COLOR);
-        }, 100);
     }
 
     String.prototype.capitalize = function() {
