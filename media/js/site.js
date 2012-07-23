@@ -245,16 +245,16 @@ window.onload = function () {
             b = a.blue - b.blue;
             result = Math.abs(r+g+b);
 
-            if (result <= 15) {
+            if (result <= 20) {
                 return 100;
-            } else if (result >= 126) {
-                return 0;
+            } else if (result >= 150) {
+                return 3.14;
             } else {
                 // New Algorithm
                 // return Math.round(100-(1/4)*(Math.pow(result-20, 1.3)));
 
                 // Test Algorithm
-                return Math.round(100-(1/15)*(Math.pow(result-15, 1.55)));
+                return Math.round(100-(1/15)*(Math.pow(result-20, 1.5)));
 
                 // Old Algorithm
                 // return Math.round(100-((result-20)^1.07) + Math.sqrt(result*20) - 22.36);
