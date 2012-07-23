@@ -61,7 +61,7 @@ header#header #about {
 
 #game h3#level {
     position: absolute;
-    right: 5px;
+    right: -14px;
     bottom: -23px;
     color: #333;
 }
@@ -88,7 +88,7 @@ header#header #about {
 
 #game section#controls #after_score h3 {
     border: 1px solid white;
-    font-size: 52px;
+    font-size: 50px;
     padding: 18px 10px;
 }
 

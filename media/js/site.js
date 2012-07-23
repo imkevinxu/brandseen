@@ -82,6 +82,7 @@ window.onload = function () {
                 "endNumber": score,
                 "onFinish": function() {
                     $('#next').attr("disabled", false);
+                    $("#score").text(score);
                 }
             });
 
@@ -189,7 +190,7 @@ window.onload = function () {
                 $('#layer_img').css("display", "inline");
             }, 800);
 
-            $("#logo").slideToggle(800).delay(200);
+            $("#logo").slideToggle(600);
         }
 
     }
@@ -234,6 +235,8 @@ window.onload = function () {
     };
 
     function colorDifference(a, b) {
+            console.log(a);
+            console.log(b);
         var a = parseHexColor(a);
         var b = parseHexColor(b);
 
@@ -243,18 +246,27 @@ window.onload = function () {
             r = a.red - b.red;
             g = a.green - b.green;
             b = a.blue - b.blue;
-            result = Math.abs(r+g+b);
+            result = Math.sqrt(Math.pow(r, 2)+Math.pow(g, 2)+Math.pow(b, 2));
+            console.log(r);
+            console.log(g);
+            console.log(b);
+            console.log(result);
 
-            if (result <= 20) {
+            if (result <= 15) {
                 return 100;
-            } else if (result >= 150) {
-                return 3.14;
+            } else if (result >= 140) {
+                if (Math.random() >= 0.5) {
+                    return 3.14;
+                } else {
+                    return 0;
+                }
+                
             } else {
                 // New Algorithm
                 // return Math.round(100-(1/4)*(Math.pow(result-20, 1.3)));
 
                 // Test Algorithm
-                return Math.round(100-(1/15)*(Math.pow(result-20, 1.5)));
+                return Math.round(100-(1/15)*(Math.pow(result-10, 1.5)));
 
                 // Old Algorithm
                 // return Math.round(100-((result-20)^1.07) + Math.sqrt(result*20) - 22.36);
