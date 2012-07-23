@@ -1,7 +1,5 @@
 Features
 ---------
-image slides up and disappears after grading
-like, tweet, share your score
 submit score (name, location)
 high score list
 Top bar comes down
@@ -13,13 +11,9 @@ relook at brain and make sure colors are somewhat reasonable
 relook through all images and cleanup
 
 backend:
-- scores
 - image model with overlay, underlay, url, etc.
 - random images
 - google-like images
 
 
 LIKE, TWEET, EMAIL, HN, REDDIT
-
-TWEET ON LAST PAGE
-RECORD SCORES
