@@ -86,16 +86,15 @@ window.onload = function () {
                 }
             });
 
+            logo_name = logo;
             if (logo.indexOf("_") != -1) {
-                $("#real_img").attr("src", "/media/images/" + logo.split("_")[0] + ".png")
-                            .fadeIn(800);
-                $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo.split("_")[0].capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
-
-            } else {
-                $("#real_img").attr("src", "/media/images/" + logo + ".png")
-                            .fadeIn(800);
-                $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
+                logo_name = logo.split("_")[0];
             }
+
+            $("#real_img").attr("src", "/media/images/" + logo_name + ".png")
+                        .fadeIn(800);
+            $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo_name.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
+           
         }
 
     });
@@ -130,7 +129,7 @@ window.onload = function () {
         $("#logo").slideToggle(600);
 
         switch(lvl) {
-            case 2:
+            case 10:
                 next_logo = "batman_yellow";
                 layer = "batman_black";
                 break;
@@ -157,14 +156,14 @@ window.onload = function () {
             case 9:
                 next_logo = "apple";
                 break;
-            case 10:
+            case 2:
                 $("#tape").hide();
                 $("#logo").hide();
                 $("#controls").hide();
                 $("#instructions").hide();
                 var average_score = averageScore(all_scores);
                 $("#game").append("<center><h1 id='congrats'>Congrats! Your average score was "+average_score+"</h1></center>");
-                $("#game").append('<center><a href="https://twitter.com/intent/tweet?text=I got '+average_score+'% overall on Brandseen, the logo coloring game http://brandseenapp.com/ &via=brandseen"><h3>Share your score!</h3></a></center>');
+                $("#game").append('<center><a href="https://twitter.com/intent/tweet?text='+escape("I got "+average_score+"% overall on Brandseen, the logo coloring game http://brandseenapp.com")+'&via=brandseen"><h3>Share your score!</h3></a></center>');
                 $("#game").append("<center><table><tr><td>Coca Cola</td><td>"+all_scores[0]+"</td><td>Batman</td><td>"+all_scores[1]+"</td></tr><tr><td>Yahoo</td><td>"+all_scores[2]+"</td><td>Dropbox</td><td>"+all_scores[3]+"</td></tr><tr><td>McDonalds</td><td>"+all_scores[4]+"</td><td>Starbucks</td><td>"+all_scores[5]+"</td></tr><tr><td>IBM</td><td>"+all_scores[6]+"</td><td>Shell</td><td>"+all_scores[7]+"</td></tr><tr><td>Apple</td><td>"+all_scores[8]+"</td></tr></table></center>");
                 $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" style="vertical-align: top;"/></center>');
                 
