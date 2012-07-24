@@ -19,3 +19,6 @@ class Record(Base):
     score = models.IntegerField(blank=True, null=True)
     game = models.CharField(blank=True, null=True, max_length=255)
     level = models.CharField(blank=True, null=True, max_length=255)
+
+    def __unicode__(self):
+        return u'[%s] %s - %s' % (self.game, self.level, self.score)
