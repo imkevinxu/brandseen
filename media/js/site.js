@@ -16,7 +16,11 @@ window.onload = function () {
         $img = $('#img_logo');
         width = $img.width();
         height = $img.height();
-        $img.css('position', 'absolute').css('top', '-9999px');
+        $img.css({
+            position: "absolute",
+            top: "-9999px",
+            left: 0
+        });
     };
 
     hideImage();
