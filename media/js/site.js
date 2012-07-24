@@ -107,7 +107,7 @@ window.onload = function () {
                     "left": "50%",
                     "margin-left" : -readjustment_width
                 })
-            }, 100);
+            }, 105);
             $('#real_img').fadeIn(800);
 
             $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo_name.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
