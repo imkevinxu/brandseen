@@ -111,7 +111,7 @@ window.onload = function () {
             });
 
             $('#real_img').load(function() {
-                readjustment_width = this.width()/2;
+                readjustment_width = this.width/2;
                 $('#real_img').css({
                     "display": "inline",
                     "left": "50%",
