@@ -93,21 +93,22 @@ window.onload = function () {
 
             $("#real_img").attr("src", "/media/images/" + logo_name + ".png");
 
-
             // SUPER HACKY
             // "Semi-threading" in order to the the right readjustment_width
             // while the image is still loading
-            window.setTimeout( function() {
-                readjustment_width = $('#real_img').width()/2;
-            }, 100);
+            $("real_img").one('load', function() {
+                if(this.complete) $(this).load();
+            });
 
-            window.setTimeout( function() {
+            $('#real_img').load(function() {
+                readjustment_width = this.width()/2;
                 $('#real_img').css({
                     "display": "inline",
                     "left": "50%",
                     "margin-left" : -readjustment_width
                 })
-            }, 105);
+            });
+
             $('#real_img').fadeIn(800);
 
             $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo_name.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
