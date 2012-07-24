@@ -59,6 +59,10 @@ header#header #about {
     visibility: hidden;
 }
 
+#game section#logo .twelve.columns {
+    padding: 0;
+}
+
 #game h3#level {
     position: absolute;
     right: -14px;

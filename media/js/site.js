@@ -91,8 +91,25 @@ window.onload = function () {
                 logo_name = logo.split("_")[0];
             }
 
-            $("#real_img").attr("src", "/media/images/" + logo_name + ".png")
-                        .fadeIn(800);
+            $("#real_img").attr("src", "/media/images/" + logo_name + ".png");
+
+
+            // SUPER HACKY
+            // "Semi-threading" in order to the the right readjustment_width
+            // while the image is still loading
+            window.setTimeout( function() {
+                readjustment_width = $('#real_img').width()/2;
+            }, 100);
+
+            window.setTimeout( function() {
+                $('#real_img').css({
+                    "display": "inline",
+                    "left": "50%",
+                    "margin-left" : -readjustment_width
+                })
+            }, 100);
+            $('#real_img').fadeIn(800);
+
             $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo_name.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
            
         }
@@ -110,8 +127,8 @@ window.onload = function () {
             next_level++;
             if (next_level <= 10) {
                 $("#current_level").html(next_level);
-                $('#layer_img').css("display", "none").attr("src", "");
-                $("#real_img").css("display", "none").attr("src", "");
+                $('#layer_img').attr("src", "").css("display", "none");
+                $("#real_img").attr("src", "").css("display", "none");
                 nextLevel();
 
             }
@@ -175,8 +192,8 @@ window.onload = function () {
 
         if (lvl < 10) {
             $('#img_logo').attr("src", "/media/images/" + next_logo + ".png").attr("alt", next_logo);
-            if (layer != "") {
-                $('#layer_img').attr("src", "/media/images/" + layer + ".png").css("display", "none");
+            if (layer != "" || typeof(layer) == 'undefined') {
+                $('#layer_img').attr("src", "/media/images/" + layer + ".png");
             }
 
             cp.onchange = function (clr) {
@@ -186,13 +203,15 @@ window.onload = function () {
 
             window.setTimeout( function() {
                 changeLogoColor(DEFAULT_COLOR);
-                readjustment_width = $('#layer_img').width()/2;
-                $('#layer_img').css({
-                    "display": "inline",
-                    "left": "50%",
-                    "margin-left" : -readjustment_width
-                });
-            }, 800);
+                if (layer != "" || typeof(layer) == 'undefined') {
+                    readjustment_width = $('#layer_img').width()/2;
+                    $('#layer_img').css({
+                        "display": "inline",
+                        "left": "50%",
+                        "margin-left" : -readjustment_width
+                    });
+                }
+            }, 600);
 
             $("#logo").slideToggle(600);
         }
