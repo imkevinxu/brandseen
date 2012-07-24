@@ -82,7 +82,7 @@ window.onload = function () {
             all_scores.push(score);
             $("#after_score").css('display', 'block');
             $("#score").countTo({
-                "interval": 10,
+                "interval": 6,
                 "startNumber": 0,
                 "endNumber": score,
                 "onFinish": function() {

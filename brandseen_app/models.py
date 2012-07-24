@@ -16,7 +16,7 @@ class Base(models.Model):
         abstract = True
 
 class Record(Base):
-    score = models.IntegerField(blank=True, null=True)
+    score = models.FloatField(blank=True, null=True)
     game = models.CharField(blank=True, null=True, max_length=255)
     level = models.CharField(blank=True, null=True, max_length=255)
 
