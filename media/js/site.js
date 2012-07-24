@@ -143,7 +143,7 @@ window.onload = function () {
         var next_logo = "";
         var layer = "";
 
-        $("#logo").slideToggle(600);
+        $("#logo").slideToggle(700);
 
         switch(lvl) {
             case 2:
@@ -211,7 +211,7 @@ window.onload = function () {
                         "margin-left" : -readjustment_width
                     });
                 }
-            }, 600);
+            }, 700);
 
             $("#logo").slideToggle(600);
         }

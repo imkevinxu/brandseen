@@ -9,6 +9,7 @@ show all scores and tally thing at end
 arrow showing starting point
 relook at brain and make sure colors are somewhat reasonable
 relook through all images and cleanup
+resize images
 
 backend:
 - image model with overlay, underlay, url, etc.
