@@ -12,13 +12,15 @@ relook through all images and cleanup
 resize images
 
 backend:
-- image model with overlay, underlay, url, etc.
+- image model with overlay, underlay, url, correct guess etc.
 - random images
 - google
 - more multi-colored images
-
+- time of each stage?
+- user's guess
 
 LIKE, TWEET, EMAIL, HN, REDDIT
+more ways to share / bring traffic in
 
 twitter account
 tweet combined scores
