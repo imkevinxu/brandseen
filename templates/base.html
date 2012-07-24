@@ -68,16 +68,56 @@
     {# Content #}
     <div class="row">
         <div class="eleven columns centered">
-        
-            <div class="main" role="main">
-                <!-- PROMPT IE 6 USERS TO INSTALL CHROME FRAME. REMOVE THIS IF YOU SUPPORT IE 6.
-                chromium.org/developers/how-tos/chrome-frame-getting-started -->
-                <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-                <!--Block Content -->
-                {% block content %}{% endblock %}
-                <!-- End Block -->
-            
+            <header id="header" class="row">
+                <div class="three columns">
+                    <a href="/">
+                        <img src="/media/images/brandseen.png" id="brandseen">
+                    </a>
+                </div>
+                <div class="seven columns">
+                    <h5>How well do you recognize these brands?</h5>
+                </div>
+
+                <div class="two columns">
+                    <a href="#" class="button" id="about" data-reveal-id="aboutModal">About</a>
+                </div>
+            </header>
+
+            <!-- PROMPT IE 6 USERS TO INSTALL CHROME FRAME. REMOVE THIS IF YOU SUPPORT IE 6.
+            chromium.org/developers/how-tos/chrome-frame-getting-started -->
+            <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+            <!--Block Content -->
+            {% block content %}{% endblock %}
+            <!-- End Block -->
+
+            <footer id="footer" class="row">
+                <div class="six columns">
+                    <p>
+                        Made by <a href="http://imkevinxu.com" target="_blank">Kevin</a>, <a href="http://cathyslee.com" target="_blank">Cathy</a>, and <a href="http://ariweinstein.com" target="_blank">Ari</a> at Greylock Hackfest.
+                        <br/>
+                        Check out the soon-to-be-coming <a href="#">iPhone App</a>.
+                    </p>
+                </div>
+
+                <div class="six columns" id="social">
+
+                    <div class="fb-like" data-href="http://brandseenapp.com" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://brandseenapp.com/" data-text="I'm playing Brandseen, a logo coloring game" data-via="brandseen">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+            </footer>
+
+            <div id="aboutModal" class="reveal-modal">
+                <h2>Brandseen</h2>
+                <p class="lead">A visual brand identification game.</p>
+
+                <p>Brandseen is a web and iOS game that gauges your ability to recognize and reproduce brand colors. Most brands have been around for a while, and it's interesting to see the effect that advertising has on people's memories. This app was built during the 2012 Greylock Hackfest by <a href="http://imkevinxu.com" target="_blank">Kevin Xu</a>, <a href="http://cathyslee.com" target="_blank">Cathy Lee</a>, and <a href="http://ariweinstein.com" target="_blank">Ari Weinstein</a>. Feel free to send us feedback or suggestions via <a href="http://www.twitter.com/brandseen" target="_blank">@brandseen</a>.</p>
+
+                <img src="/media/images/photoofus.png">
+
+                <a class="close-reveal-modal">&#215;</a>
             </div>
         
         </div>
