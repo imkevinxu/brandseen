@@ -290,5 +290,4 @@ window.onload = function () {
             }
         }
     };
-
 }
