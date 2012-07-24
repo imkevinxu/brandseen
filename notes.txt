@@ -19,6 +19,5 @@ backend:
 LIKE, TWEET, EMAIL, HN, REDDIT
 
 twitter account
-facebook like/send but
 tweet combined scores
 mobile
