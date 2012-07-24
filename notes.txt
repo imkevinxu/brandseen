@@ -35,3 +35,12 @@ mobile
 crowdsourcing logos?
 get emails
 google bonus release
+legality line, want logo taken out? contact us
+
+BUGS:
+- real_img off-centered (display: block; margin-auto? within static width div)
+- layer_img off-centered
+- real_img doesn't fade in
+- grey rectangle
+
+look for any setTimeout and do .load()
