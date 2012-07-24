@@ -73,6 +73,11 @@ window.onload = function () {
             $(this).css("display", "none");
 
             logo = $('#img_logo').attr("alt");
+            logo_name = logo;
+            if (logo.indexOf("_") != -1) {
+                logo_name = logo.split("_")[0];
+            }
+
             var score = colorDifference(color, BRAIN[logo]);
             all_scores.push(score);
             $("#after_score").css('display', 'block');
@@ -83,13 +88,14 @@ window.onload = function () {
                 "onFinish": function() {
                     $('#next').attr("disabled", false);
                     $("#score").text(score);
+
+                    $.get("/success", {
+                        score: score,
+                        game: "Basic",
+                        level: logo_name
+                    });
                 }
             });
-
-            logo_name = logo;
-            if (logo.indexOf("_") != -1) {
-                logo_name = logo.split("_")[0];
-            }
 
             $("#real_img").attr("src", "/media/images/" + logo_name + ".png");
 
@@ -184,7 +190,12 @@ window.onload = function () {
                 $("#game").append("<center><table><tr><td>Coca Cola</td><td>"+all_scores[0]+"</td><td>Batman</td><td>"+all_scores[1]+"</td></tr><tr><td>Yahoo</td><td>"+all_scores[2]+"</td><td>Dropbox</td><td>"+all_scores[3]+"</td></tr><tr><td>McDonalds</td><td>"+all_scores[4]+"</td><td>Starbucks</td><td>"+all_scores[5]+"</td></tr><tr><td>IBM</td><td>"+all_scores[6]+"</td><td>Shell</td><td>"+all_scores[7]+"</td></tr><tr><td>Apple</td><td>"+all_scores[8]+"</td></tr></table></center>");
                 $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" style="vertical-align: top;"/></center>');
                 
-                $.get("/success", { "score": average_score } );
+                $.get("/success", {
+                    score: average_score,
+                    game: "Basic",
+                    level: "FINAL"
+                });
+
                 break;
             default:
                 break;
