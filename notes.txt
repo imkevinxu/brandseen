@@ -14,7 +14,8 @@ resize images
 backend:
 - image model with overlay, underlay, url, etc.
 - random images
-- google-like images
+- google
+- more multi-colored images
 
 
 LIKE, TWEET, EMAIL, HN, REDDIT
