@@ -16,8 +16,14 @@ backend:
 - random images
 - google
 - more multi-colored images
+
+data to be collected:
 - time of each stage?
 - user's guess
+- correct hue
+- amount of difference
+- name of algorithm
+- dropoff rate / at what level (possible admin/stats panel)
 
 LIKE, TWEET, EMAIL, HN, REDDIT
 more ways to share / bring traffic in
