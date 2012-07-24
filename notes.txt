@@ -42,5 +42,13 @@ BUGS:
 - layer_img off-centered
 - real_img doesn't fade in
 - grey rectangle
+- newer mcdonalds logo
 
 look for any setTimeout and do .load()
+
+STATS @ 4pm
+    55k+ levels played
+    4500 got to FINAL
+    Hacker News since 1pm
+    92 pts / 66 comments
+    #1 for an hour, #2 since
