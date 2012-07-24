@@ -186,7 +186,12 @@ window.onload = function () {
 
             window.setTimeout( function() {
                 changeLogoColor(DEFAULT_COLOR);
-                $('#layer_img').css("display", "inline");
+                readjustment_width = $('#layer_img').width()/2;
+                $('#layer_img').css({
+                    "display": "inline",
+                    "left": "50%",
+                    "margin-left" : -readjustment_width
+                });
             }, 800);
 
             $("#logo").slideToggle(600);
