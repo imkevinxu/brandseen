@@ -17,8 +17,10 @@ class Base(models.Model):
 
 class Record(Base):
     score = models.FloatField(blank=True, null=True)
+    guess = models.CharField(blank=True, null=True, max_length=7)
+    correct_hue = models.CharField(blank=True, null=True, max_length=7)
     game = models.CharField(blank=True, null=True, max_length=255)
     level = models.CharField(blank=True, null=True, max_length=255)
 
     def __unicode__(self):
-        return u'[%s] %s - %s' % (self.game, self.level, self.score)
+        return u'%s vs %s [%s] %s - %s' % (self.guess, self.correct_hue, self.game, self.level, self.score)

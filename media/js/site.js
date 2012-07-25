@@ -96,7 +96,9 @@ window.onload = function () {
                     $.get("/success", {
                         score: score,
                         game: "Basic",
-                        level: logo_name
+                        level: logo_name,
+                        guess: color.toUpperCase(),
+                        correct_hue: BRAIN[logo].toUpperCase()
                     });
                 }
             });
