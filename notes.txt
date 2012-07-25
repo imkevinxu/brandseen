@@ -50,6 +50,9 @@ side-by-side?
 write name of company
 only hue (auto saturate/bright)
 
+FOUNDATION:
+    change "if settings.DEBUG:" in urls.py
+
 STATS @ 4pm
     55k+ levels played
     4500 got to FINAL

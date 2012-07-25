@@ -36,6 +36,8 @@ def success(request):
                                         game=request.GET["game"],
                                         level=request.GET["level"])
             score.save()
+            
+    return HttpResponse("", mimetype='application/json')
 
 
 def highscore(request):
