@@ -71,13 +71,3 @@ BUGS
     - You need to convert hex to CIELab, and then apply a color difference formula http://en.wikipedia.org/wiki/Color_difference
         - Math.sqrt( Math.pow(L1-L2, 2) + Math.pow(a1-a2, 2) + Math.pow(b1-b2, 2) )
 
-
-
-FOUNDATION (look for more)
-----------
-- change "if settings.DEBUG:" in urls.py
-- add 404/500
-- add admin.py
-- add def unicode()
-
-

@@ -187,7 +187,7 @@ if not os.environ.get('PRODUCTION', False):
 
 
 # Heroku is supposed to inject this code.... for some reason it doesn't
-# TODO: Look into why Heroku isn't
+# TODO: Look into why Heroku isn't doing this
 # http://stackoverflow.com/questions/10596893/deploying-django-to-heroku-psycopg2-error
 import sys
 import urlparse
