@@ -1,39 +1,49 @@
 Features
+--------
+- Leaderboard
+- Top bar comes down
+- Display company name
+- Arrow showing starting point
+- Tweet combined scores
+- Mobile Responsive / Bookmark
+- Google as a bonus release
+- Multiple "Games"
+    - @reddit @breadpig @thehipmunk
+    - sports
+    - cars
+    - startups
+    - drinks
+- Show here on colorpicker right color is
+
+MUST ADD
+--------
+- Legality line, want logo taken out? contact us
+
+New Ideas
 ---------
-submit score (name, location)
-high score list
-Top bar comes down
-better white 'wrapper'
-add company name
-show all scores and tally thing at end
-arrow showing starting point
+- Crowdsourcing logos
+- Get emails
+- Side by side comparison?
+- "Easy mode" with only hue
+
 relook at brain and make sure colors are somewhat reasonable
 relook through all images and cleanup
 resize images
 
-backend:
+New Models
+----------
 - image model with overlay, underlay, url, correct guess etc.
 - random images
 - google
 - more multi-colored images
 
-data to be collected:
+Data stat variables
+-------------------
 - time of each stage?
 - amount of difference
 - name of algorithm
 - dropoff rate / at what level (possible admin/stats panel)
 
-LIKE, TWEET, EMAIL, HN, REDDIT
-more ways to share / bring traffic in
-
-twitter account
-tweet combined scores
-mobile
-
-crowdsourcing logos?
-get emails
-google bonus release
-legality line, want logo taken out? contact us
 
 BUGS:
 - real_img off-centered (display: block; margin-auto? within static width div)
@@ -41,17 +51,22 @@ BUGS:
 - real_img doesn't fade in
 - grey rectangle
 - newer mcdonalds logo
+- check dropbox logo
+- disable debug mode
 - 404/500 (add to foundation / look at other foundation stuff like admin) 
-
 look for any setTimeout and do .load()
-show where on colorpicker right color is
-side-by-side?
-@reddit @breadpig @thehipmunk
-write name of company
-only hue (auto saturate/bright)
 
-FOUNDATION:
-    change "if settings.DEBUG:" in urls.py
+
+duopixel 5 hours ago | link | parent | flag
+
+http://news.ycombinator.com/item?id=4288301
+Hey I've done similar games! check http://color.method.ac. You need to convert hex to CIELab, and then apply a color difference formula http://en.wikipedia.org/wiki/Color_difference
+Don't let the complex versions put you down, the simplest formula is good enough, just Math.sqrt( Math.pow(L1-L2, 2) + Math.pow(a1-a2, 2) + Math.pow(b1-b2, 2) ).
+
+FOUNDATION
+----------
+- change "if settings.DEBUG:" in urls.py
+- add 404/500
 
 STATS @ 4pm
     55k+ levels played
@@ -69,3 +84,8 @@ STATS @ 4pm
     http://blog.linz.im/2012/brandseen.html
 9:11
     129/82/#2
+11:05
+    144/93/#3
+11:56
+    148/95/#4
+    11 hours on front page
