@@ -15,6 +15,12 @@ Features
     - drinks
 - Show here on colorpicker right color is
 
+Checks
+------
+- relook at brain and make sure colors are somewhat reasonable
+- relook through all images and cleanup
+- resize images
+
 MUST ADD
 --------
 - Legality line, want logo taken out? contact us
@@ -26,13 +32,17 @@ New Ideas
 - Side by side comparison?
 - "Easy mode" with only hue
 
-relook at brain and make sure colors are somewhat reasonable
-relook through all images and cleanup
-resize images
+
 
 New Models
 ----------
-- image model with overlay, underlay, url, correct guess etc.
+- image model
+    - overlay
+    - underlay
+    - url
+    - name
+    - correct guess
+    - etc.
 - random images
 - google
 - more multi-colored images
@@ -45,7 +55,9 @@ Data stat variables
 - dropoff rate / at what level (possible admin/stats panel)
 
 
-BUGS:
+
+BUGS
+----
 - real_img off-centered (display: block; margin-auto? within static width div)
 - layer_img off-centered
 - real_img doesn't fade in
@@ -53,39 +65,19 @@ BUGS:
 - newer mcdonalds logo
 - check dropbox logo
 - disable debug mode
-- 404/500 (add to foundation / look at other foundation stuff like admin) 
-look for any setTimeout and do .load()
+- look for any setTimeout and do .load()
+- algorithm
+    - http://news.ycombinator.com/item?id=4288301
+    - You need to convert hex to CIELab, and then apply a color difference formula http://en.wikipedia.org/wiki/Color_difference
+        - Math.sqrt( Math.pow(L1-L2, 2) + Math.pow(a1-a2, 2) + Math.pow(b1-b2, 2) )
 
 
-duopixel 5 hours ago | link | parent | flag
 
-http://news.ycombinator.com/item?id=4288301
-Hey I've done similar games! check http://color.method.ac. You need to convert hex to CIELab, and then apply a color difference formula http://en.wikipedia.org/wiki/Color_difference
-Don't let the complex versions put you down, the simplest formula is good enough, just Math.sqrt( Math.pow(L1-L2, 2) + Math.pow(a1-a2, 2) + Math.pow(b1-b2, 2) ).
-
-FOUNDATION
+FOUNDATION (look for more)
 ----------
 - change "if settings.DEBUG:" in urls.py
 - add 404/500
+- add admin.py
+- add def unicode()
 
-STATS @ 4pm
-    55k+ levels played
-    4500 got to FINAL
-    Hacker News since 1pm
-    92 pts / 66 comments
-    #1 for an hour, #2 since. #3 at 4:20 / 69 comments
-4:40pm
-    98pts/69cmts/#4
-8:38pm
-    125/79/#2
-    7+ hours now
-    https://twitter.com/alexisohanian/status/227919355051122690
-    https://twitter.com/johnolilly/status/227921800594599936
-    http://blog.linz.im/2012/brandseen.html
-9:11
-    129/82/#2
-11:05
-    144/93/#3
-11:56
-    148/95/#4
-    11 hours on front page
+
