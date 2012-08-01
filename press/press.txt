@@ -1,0 +1,109 @@
+
+*LEARN FROM THIS http://method.ac/blog/*
+
+Day 1
+-----
+    Regular old post on Facebook
+    200 games played in first day with a bunch of bugs (safari)
+
+Hacker News
+-----------
+    http://news.ycombinator.com/item?id=4287588 (READ ALL)
+    Reached #1 [picture] at 1pm
+    11 hours on front page as of midnight around #3
+    148/95/#3
+    Responding to EVERYONE
+    Super helpful comments
+    Beat out:
+        Congress Must Act After US Government Admits To Warrantless Wiretapping 
+        Iranian nuclear program hacked, made to play AC/DC
+        Google Compute Engine vs. Amazon EC2: Video Transcoding
+
+Google Analytics
+----------------
+    369 "right now" peak [picture chronology of climb]
+    Hovered at 100 rest of the day
+    Screenshotting everything
+    Screenshot sources [picture]
+
+    Analytiks
+    ---------
+    Fancy screenshots at midnight [picture]
+
+Twitter
+-------
+    https://twitter.com/alexisohanian/status/227919355051122690
+    https://twitter.com/johnolilly/status/227921800594599936
+    https://twitter.com/colourlovers/status/228613862537175040
+    Lots of @-replying
+    Saved "Brandseen" search
+
+Reddit
+------
+    http://www.reddit.com/r/Design/comments/x3cz5/think_you_know_your_brand_colors_test_your/
+    60 upvotes/28 comments in /r/design and #2 at midnight
+    Trolling/mean comments
+    Liked the 3.14 easter egg
+    Steady traffic
+
+Friends
+-------
+    Apple [picture]
+    Base Camp [picture]
+
+International Boom
+------------
+    Around 11:53
+    Nei-Hu, Taiwan [picture]
+    Rest of the world, primarily through facebook [picture]
+
+Blog Posts
+---------------
+    http://blog.linz.im/2012/brandseen.html
+    http://nrkbeta.no/2012/07/25/hvor-godt-kjenner-du-logoene/
+    http://sijobling.com/aside/brandseen/ [picture]
+    http://www.creativebloq.com/graphic-design/play-brandseen-how-well-do-you-know-your-brands-712435 [picture]
+    http://designtaxi.com/news/353134/Test-Your-Logo-Knowledge-Wit...
+    http://digitaltoni.wordpress.com/2012/07/28/how-well-do-you-know-your-brands/
+    http://www.psfk.com/2012/07/identify-brand-logos.html
+    http://ediciongeek.com/en-corto/brandseen-prueba-que-tanto-sabes-de-logos-con-esta-aplicacion-web/
+
+Analytics
+---------
+    122,257 levels played [picture]
+    17,146 cocacolas
+    9738 finals
+    242 likes / 343 on twitter [picture]
+
+Graphs
+------
+    Calculate range with high score of 96 by Kathy Vu
+    Make graphs of standard deviation, etc.
+    Best and Worst
+    Dropoff rate
+
+Conclusions
+-----------
+    Fanboy around certain brands like Coke, Batman and Apple
+    Annoyed by Yahoo and McDonalds (red)
+    Few know IBM/Shell
+    Europeans didn't know Starbucks
+    More levels!
+
+6:35AM -- #26 on Hacker News by Apple Mountain Lion stories
+*Lots of thank you and congrats!*
+
+http://brandseenapp.com/
+https://twitter.com/#!/search/brandseen
+http://brandseenapp.com/admin/brandseen_app/record/
+https://www.google.com/analytics/web/?pli=1#report/visitors-overview/a33566186w60888838p62301278/
+http://news.ycombinator.com/item?id=4287588
+http://www.reddit.com/r/Design/comments/x3cz5/think_you_know_your_brand_colors_test_your/
+
+One week
+--------
+285,137 levels played
+33,131 uniques
+48,073 pageviews
+39,811 first levels played (83% played the first level)
+23,485 finals played (59% finished the game)

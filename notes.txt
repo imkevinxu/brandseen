@@ -13,6 +13,10 @@ Features
     - cars
     - startups
     - drinks
+    - universities
+    - vc firms
+    - fashion
+    - CPG
 - Show here on colorpicker right color is
 
 Checks
@@ -24,6 +28,7 @@ Checks
 MUST ADD
 --------
 - Legality line, want logo taken out? contact us
+    "Please note:The use of low res logo images in this game for use of identification qualifies as “Fair Use” under US copyright law. All logos shown or represented in this game are protected by copyright and/or are trademarks of their respective corporations. This game does not claim any ownership (copyright or otherwise) of any logos used in this game. The logos are protected by copyright and/or trademark."
 
 New Ideas
 ---------
@@ -52,6 +57,7 @@ Data stat variables
 - time of each stage?
 - amount of difference
 - name of algorithm
+- session id of a "Game"
 - dropoff rate / at what level (possible admin/stats panel)
 
 
