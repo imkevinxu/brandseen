@@ -24,7 +24,7 @@ window.onload = function () {
     };
 
     hideImage();
-    
+
     // this is where colorpicker created
     var div = $('#colorpicker');
     var cp = Raphael.colorpicker(div.offset().left, div.offset().top, 250, DEFAULT_COLOR, document.getElementById('colorpicker'));
@@ -47,7 +47,7 @@ window.onload = function () {
             buffer = document.createElement('canvas');
             buffer.width = fg.width;
             buffer.height = fg.height;
-            
+
             bx = buffer.getContext('2d');
 
             // fill offscreen buffer with the tint color
@@ -93,13 +93,13 @@ window.onload = function () {
                     $('#next').attr("disabled", false);
                     $("#score").text(score);
 
-                    $.get("/success", {
-                        score: score,
-                        game: "Basic",
-                        level: logo_name,
-                        guess: color.toUpperCase(),
-                        correct_hue: BRAIN[logo].toUpperCase()
-                    });
+                    // $.get("/success", {
+                    //     score: score,
+                    //     game: "Basic",
+                    //     level: logo_name,
+                    //     guess: color.toUpperCase(),
+                    //     correct_hue: BRAIN[logo].toUpperCase()
+                    // });
                 }
             });
 
@@ -123,7 +123,7 @@ window.onload = function () {
             $('#real_img').fadeIn(800);
 
             $("a#tweetintent").attr("href", "https://twitter.com/intent/tweet?text=I got "+score+" / 100 for the \""+logo_name.capitalize()+"\" logo http://brandseenapp.com/&via=brandseen");
-           
+
         }
 
     });
@@ -195,12 +195,12 @@ window.onload = function () {
                 $("#game").append('<center><a href="https://twitter.com/intent/tweet?text='+escape("I got "+average_score+"% overall on Brandseen, the logo coloring game http://brandseenapp.com")+'&via=brandseen"><h3>Share your score!</h3></a></center>');
                 $("#game").append("<center><table><tr><td>Coca Cola</td><td>"+all_scores[0]+"</td><td>Batman</td><td>"+all_scores[1]+"</td></tr><tr><td>Yahoo</td><td>"+all_scores[2]+"</td><td>Dropbox</td><td>"+all_scores[3]+"</td></tr><tr><td>McDonalds</td><td>"+all_scores[4]+"</td><td>Starbucks</td><td>"+all_scores[5]+"</td></tr><tr><td>IBM</td><td>"+all_scores[6]+"</td><td>Shell</td><td>"+all_scores[7]+"</td></tr><tr><td>Apple</td><td>"+all_scores[8]+"</td></tr></table></center>");
                 $("#game").append('<center><img src="/media/images/cat1.jpeg" class="cat" /><img src="/media/images/cat2.jpeg" class="cat" /><img src="/media/images/cat3.jpeg" class="cat" /><img src="/media/images/cat5.jpeg" class="cat" /><img src="/media/images/cat4.jpeg" class="cat" /><img src="/media/images/cat6.jpeg" class="cat" style="vertical-align: top;"/></center>');
-                
-                $.get("/success", {
-                    score: average_score,
-                    game: "Basic",
-                    level: "FINAL"
-                });
+
+                // $.get("/success", {
+                //     score: average_score,
+                //     game: "Basic",
+                //     level: "FINAL"
+                // });
 
                 break;
             default:
@@ -294,7 +294,7 @@ window.onload = function () {
                 } else {
                     return 0;
                 }
-                
+
             } else {
                 // New Algorithm
                 // return Math.round(100-(1/4)*(Math.pow(result-20, 1.3)));
