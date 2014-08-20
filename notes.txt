@@ -5,7 +5,7 @@ Features
 - Display company name
 - Arrow showing starting point
 - Tweet combined scores
-- Mobile Responsive / Bookmark
+- Mobile Responsive (iphone, ipad, 2 simulators) / Bookmark
 - Google as a bonus release
 - Multiple "Games"
     - @reddit @breadpig @thehipmunk
